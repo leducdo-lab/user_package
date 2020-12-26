@@ -1,0 +1,22 @@
+{
+    "name": "leducdo/user",
+    "authors": [
+        {
+            "name": "Do Le",
+            "email": "ledo3012@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "TDP\\User\\": "src/"
+        }
+    },
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TDP\\User\\UserServiceProvider"
+            ]
+        }
+    }
+}
