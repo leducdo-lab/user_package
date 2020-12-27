@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 Route::group(['namespace' => "TDP\User\Http\Controller", 'middleware' => ['web']], function () {
+
     Route::get('/info', [
         'as'=> 'info_user',
         'uses' => 'UserController@getInfo_User'
@@ -35,6 +38,11 @@ Route::group(['namespace' => "TDP\User\Http\Controller", 'middleware' => ['web']
     Route::post('/login', [
         'as'=> 'login',
         'uses' => 'UserController@postLogin'
+    ]);
+
+    Route::get('/logout', [
+        'as'=> 'logout',
+        'uses' => 'UserController@getLogout'
     ]);
 
 });

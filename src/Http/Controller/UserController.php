@@ -5,9 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-use App\User;
-use App\Address;
-use App\Person;
+use App\Models\User;
+use App\Models\Address;
+use App\Models\Person;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Hashing\BcryptHasher;
@@ -15,6 +15,15 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
+
+    public function getLogout() {
+
+        setcookie('name', '', time()-100);
+        setcookie('user_id', '', time()-100);
+
+        Auth::logout();
+        return redirect()->route('home');
+    }
 
     public function createPerson($email, $password, $is_admin) {
         $person = new Person();
@@ -200,7 +209,6 @@ class UserController extends Controller
 
                 $email_cookie = cookie('email', $_admin->email, time() + $minutes);
                 $main_admin = cookie('main_admin', ((boolean)$_admin->is_main_admin), time() +$minutes);
-//                dd($main_admin);
                 return redirect()->route('dashboard')
                     ->withCookie($email_cookie)
                     ->withCookie($main_admin);

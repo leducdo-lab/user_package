@@ -1,7 +1,6 @@
 <?php
 namespace TDP\User;
 
-use App\User;
 use Illuminate\Support\ServiceProvider;
 
 class UserServiceProvider extends ServiceProvider
