@@ -5,9 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-use App\Models\User;
-use App\Models\Address;
-use App\Models\Person;
+use TDP\User\Models\User;
+use TDP\User\Models\Address;
+use TDP\User\Models\Person;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Hashing\BcryptHasher;
