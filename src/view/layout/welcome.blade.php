@@ -9,10 +9,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <head>
         <title>Shopin</title>
         <base href="{{asset('')}}">
-        <link href="{{('vendor/leducdo/user/css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{('user/css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
         <!-- Custom Theme files -->
         <!--theme-style-->
-        <link href="{{('css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{('user/css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
         <!--//theme-style-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -20,13 +20,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
         <!--theme-style-->
-        <link href="{{('css/style4.css')}}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{('user/css/style4.css')}}" rel="stylesheet" type="text/css" media="all" />
         <!--//theme-style-->
-        <script src="{{('js/jquery.min.js')}}"></script>
+        <script src="{{('user/js/jquery.min.js')}}"></script>
         <!--- start-rate---->
-        <script src="{{('js/jstarbox.js')}}"></script>
-        <link rel="stylesheet" href="{{('css/jstarbox.css')}}" type="text/css" media="screen" charset="utf-8" />
-        <link href="{{('css/form.css')}}" rel="stylesheet" type="text/css" media="all" />
+        <script src="{{('user/js/jstarbox.js')}}"></script>
+        <link rel="stylesheet" href="{{('user/css/jstarbox.css')}}" type="text/css" media="screen" charset="utf-8" />
+        <link href="{{('user/css/form.css')}}" rel="stylesheet" type="text/css" media="all" />
         <script type="text/javascript">
             jQuery(function() {
                 jQuery('.starbox').each(function() {
@@ -103,12 +103,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	@include('user::layout.footer')
     <!--//footer-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="{{('js/simpleCart.min.js')}}"> </script>
+    <script src="{{('user/js/simpleCart.min.js')}}"> </script>
     <!-- slide -->
-    <script src="{{('js/bootstrap.min.js')}}"></script>
+    <script src="{{('user/js/bootstrap.min.js')}}"></script>
     <!--light-box-files -->
-    <script src="{{('js/jquery.chocolat.js')}}"></script>
-    <link rel="stylesheet" href="{{('css/chocolat.css')}}" type="text/css" media="screen" charset="utf-8">
+    <script src="{{('user/js/jquery.chocolat.js')}}"></script>
+    <link rel="stylesheet" href="{{('user/css/chocolat.css')}}" type="text/css" media="screen" charset="utf-8">
     <!--light-box-files -->
     <script type="text/javascript" charset="utf-8">
         $(function() {

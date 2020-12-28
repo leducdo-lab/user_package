@@ -27,7 +27,7 @@ class UserServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__."/view","user");
         $this->publishes([
             __DIR__.'/public/' => public_path('user'),
-        ],'userpublic');
+        ],'public');
 
     }
 }
