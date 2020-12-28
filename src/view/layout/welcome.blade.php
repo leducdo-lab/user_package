@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <head>
         <title>Shopin</title>
         <base href="{{asset('')}}">
-        <link href="{{('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{('vendor/leducdo/user/css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
         <!-- Custom Theme files -->
         <!--theme-style-->
         <link href="{{('css/style.css')}}" rel="stylesheet" type="text/css" media="all" />

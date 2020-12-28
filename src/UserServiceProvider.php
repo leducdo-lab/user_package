@@ -13,7 +13,6 @@ class UserServiceProvider extends ServiceProvider
     public function register()
     {
         //
-
     }
 
     /**
@@ -26,5 +25,9 @@ class UserServiceProvider extends ServiceProvider
         //
         $this->loadRoutesFrom(__DIR__ ."/routes/web.php");
         $this->loadViewsFrom(__DIR__."/view","user");
+        $this->publishes([
+            __DIR__.'/public/' => public_path('user'),
+        ],'userpublic');
+
     }
 }
