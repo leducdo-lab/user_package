@@ -5,9 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-use App\User;
-use App\Address;
-use App\Person;
+use TDP\User\Models\User;
+use TDP\User\Models\Address;
+use TDP\User\Models\Person;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Hashing\BcryptHasher;
@@ -15,6 +15,16 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
+
+    protected $user;
+    protected $person;
+    protected $address;
+
+    public function __construct(Person $person, Address $address, User $user) {
+        $this->person = $person;
+        $this->address = $address;
+        $this->user = $user;
+    }
 
     public function getLogout() {
 
