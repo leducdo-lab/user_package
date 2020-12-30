@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use TDP\User\Models\User;
 use TDP\User\Models\Address;
 use TDP\User\Models\Person;
+use TDP\User\Models\Order_Detail;
+use TDP\User\Models\Products;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Hashing\BcryptHasher;
@@ -24,6 +26,34 @@ class UserController extends Controller
         $this->person = $person;
         $this->address = $address;
         $this->user = $user;
+    }
+    
+    public function getIndex(Request $req) {
+
+        $cookie = $req->cookie('name');
+        $trend = Order_Detail::select('product_id')
+                            ->groupBy('product_id')
+                            ->limit(8)
+                            ->orderBy(DB::raw('COUNT(product_id)'),'desc')
+                            ->get();
+            $product = array();
+
+        foreach ($trend as $t){
+
+            array_push($product, Products::select('name', 'unit_price', 'url', 'product.id')
+                                ->join('image', 'image.product_id','=','product.id')
+                                ->where([
+                                    ['product.id', '=', $t->product_id],
+                                    ['image.main', '=', '1'],
+                                ])
+                                ->get()
+            );
+        }
+
+        if(empty($cookie) == false)
+            return view('page.home')->with(['name' => $cookie, 'trendings' => $product]);
+        else
+            return view('page.home')->with(['trendings' => $product]);
     }
 
     public function getLogout() {
