@@ -4,6 +4,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => "TDP\User\Http\Controller", 'middleware' => ['web']], function () {
 
+    Route::get('/', [
+        'as' => 'home',
+        'uses' => 'UserController@getIndex'
+    ]);
+
+    Route::get('/home', [
+        'as' => 'home_1',
+        'uses' => 'UserController@getIndex'
+    ]);
+    
     Route::get('/info', [
         'as'=> 'info_user',
         'uses' => 'UserController@getInfo_User'
